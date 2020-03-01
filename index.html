@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html manifest="cache.appcache">
+<head>
+	<title>Novocure Conference Film</title>
+
+	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="manifest.webmanifest" />
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="../images/icons/icon-144x144.png">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="manifest" href="manifest.webmanifest" />
+<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.9/pwacompat.min.js"
+    integrity="sha384-VcI6S+HIsE80FVM1jgbd6WDFhzKYA0PecD/LcIyMQpT4fMJdijBh0I7Iblaacawc"
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<main>
+
+		<div id="video-container">
+			<video id="video-player" id="video-player">
+		  	<source src="NovocureV10-1.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+
+			</video>
+			<div id="controls">
+
+				<div id="controls-overlay"></div>
+				<div id="left-btn-container">
+				  	<div id="home-btn"></div>
+				  	<div id="play-btn" style="background-image: url('play_btn.png'); background-size: cover;"></div>
+				</div>
+				<div id="right-btn-container">
+					<table>
+					<tr><td><a class="button" id="section-btn-1" time-code="6" onclick="skipToTime(this.id)">1. Preparation of cells</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-2" time-code="46" onclick="skipToTime(this.id)">2. Experimental setup</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-3" time-code="67" onclick="skipToTime(this.id)">3. Start system software</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-4" time-code="96" onclick="skipToTime(this.id)">4. Prepare cells for evaluation</a><br></td></tr>
+					</table>
+
+				</div>
+				<div id="status-bar">
+					Press play to start
+				</div>
+			</div>
+		</div>
+	</main>
+<script src="jquery-3.4.1.min.js"></script>
+
+<script src="app.js"></script>
+  <script src="/upup.min.js"></script>
+  <script>
+    UpUp.start({
+      'content-url': 'index.html',
+      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'NovocureV10-1.mp4', 'pause_btn.png', 'play_btn.png', 'home_btn.png']
+    });
+  </script>
+</body>
+</html>
